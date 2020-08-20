@@ -7,6 +7,38 @@
         mc:Ignorable="d"
         Title="MainWindow" Height="450" Width="800">
     <Grid>
-        
+        <DockPanel>
+
+            <StackPanel DockPanel.Dock="Top" Height="35" Background="#FFFFFFFF" HorizontalAlignment="Left" Orientation="Horizontal">
+                <TextBlock Margin="10,0,0,0" 
+                           FontSize="25" 
+                           FontWeight="Thin"
+                           Foreground="#FF8D8D8D"
+                           Text="Converter"/>
+                
+                <Button Margin="610,5,10,5" 
+                        Width="Auto"  
+                        Background="#FFFFFFFF"
+                        BorderBrush="#FFDEDEDE"
+                        FontSize="10" 
+                        FontWeight="ExtraLight"
+                        Content="Abbrechen"/>
+            
+            </StackPanel>
+            <StackPanel DockPanel.Dock="Bottom" Height="15" Background="#FFFFFFFF">
+                
+            </StackPanel>
+            <StackPanel DockPanel.Dock="Left" Width="200" Background="#FF0060CF">
+                <TextBlock Margin="10" 
+                           Text="Recovery &amp; Repair"
+                            FontSize="15"
+                            FontWeight="Light"
+                            Foreground="#FFFFFFFF"/>
+                
+
+            </StackPanel>
+            <Grid DockPanel.Dock="Right" Background="#FFF3F3F3"></Grid>
+            
+        </DockPanel>
     </Grid>
 </Window>
