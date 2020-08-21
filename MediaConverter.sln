@@ -5,6 +5,8 @@ VisualStudioVersion = 16.0.30320.27
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MediaConverter", "MediaConverter\MediaConverter.csproj", "{74CA0BB6-E73C-4739-8081-1B28B5BDB43A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Core", "TCore\Core.csproj", "{5D05A40E-C4FE-4130-BA4A-8F17AC0B16F3}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -15,6 +17,10 @@ Global
 		{74CA0BB6-E73C-4739-8081-1B28B5BDB43A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{74CA0BB6-E73C-4739-8081-1B28B5BDB43A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{74CA0BB6-E73C-4739-8081-1B28B5BDB43A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{5D05A40E-C4FE-4130-BA4A-8F17AC0B16F3}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{5D05A40E-C4FE-4130-BA4A-8F17AC0B16F3}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{5D05A40E-C4FE-4130-BA4A-8F17AC0B16F3}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{5D05A40E-C4FE-4130-BA4A-8F17AC0B16F3}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
