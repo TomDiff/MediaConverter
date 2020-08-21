@@ -22,6 +22,7 @@ namespace MediaConverter
     {
         public MainWindow()
         {
+            DataContext = new MainWindowModel();
             InitializeComponent();
         }
     }
