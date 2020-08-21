@@ -5,40 +5,41 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MediaConverter"
         mc:Ignorable="d"
-        Title="MainWindow" Height="450" Width="800">
-    <Grid>
-        <DockPanel>
-
-            <StackPanel DockPanel.Dock="Top" Height="35" Background="#FFFFFFFF" HorizontalAlignment="Left" Orientation="Horizontal">
-                <TextBlock Margin="10,0,0,0" 
-                           FontSize="25" 
-                           FontWeight="Thin"
-                           Foreground="#FF8D8D8D"
-                           Text="Converter"/>
-                
-                <Button Margin="610,5,10,5" 
-                        Width="Auto"  
-                        Background="#FFFFFFFF"
-                        BorderBrush="#FFDEDEDE"
-                        FontSize="10" 
-                        FontWeight="ExtraLight"
-                        Content="Abbrechen"/>
+        Title="MainWindow" Height="450"  Width="1500">
+    <Grid Name="MainGrid" Background="#FFFFFFFF">
+        
+        <Grid Name="NavigationGrid" Margin="0,5,0,5" HorizontalAlignment="Left" Width="200">
+            <Border Name="mask" Background="#FFA4A3A4" CornerRadius="0,5,5,0"/>
+            <TextBlock>6262626262626262</TextBlock>
             
-            </StackPanel>
-            <StackPanel DockPanel.Dock="Bottom" Height="15" Background="#FFFFFFFF">
-                
-            </StackPanel>
-            <StackPanel DockPanel.Dock="Left" Width="200" Background="#FF0060CF">
-                <TextBlock Margin="10" 
-                           Text="Recovery &amp; Repair"
-                            FontSize="15"
-                            FontWeight="Light"
-                            Foreground="#FFFFFFFF"/>
-                
-
-            </StackPanel>
-            <Grid DockPanel.Dock="Right" Background="#FFF3F3F3"></Grid>
+            <!--Das ist der TestButton-->
+            <Button Margin="50,100,100,50">Test</Button>
             
-        </DockPanel>
+            
+            <Border BorderThickness="1" BorderBrush="#FFA4A3A4" CornerRadius="0,5,5,0"/>
+        </Grid>
+      
+
+        
+        <Grid VerticalAlignment="Center" >
+
+        </Grid>
+
+        <Grid Name="ContentGrid" Background="Black" Margin="210,5,5,5">
+
+            <Grid Name="TopGrid" Background="Tomato" Margin="5,5,5,5" VerticalAlignment="Top">
+                
+                <TextBox Name="TextBoxSelectAnweisung" Margin="5" HorizontalAlignment="Left" Width="1000" Padding="3"  
+                         Text="SELECT Top 100 Beleg_ID, Seiten, Ablagecode FROM Dyn_Beleg WHERE OriginalFileName is not null and Ablagecode not like '999999:\' and Erfassungsdatum >= '2019-08-01'">
+                    
+                </TextBox>
+                <StackPanel Name="TopStackPanelRight" Background="HotPink" Margin="5" Orientation="Horizontal"  HorizontalAlignment="Right">
+                    <Button>Start</Button>
+                    <Button>Abbrechen</Button>
+                </StackPanel>
+        </Grid>
+        </Grid>
     </Grid>
+ 
+
 </Window>
