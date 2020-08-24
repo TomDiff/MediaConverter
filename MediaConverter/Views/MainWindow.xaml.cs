@@ -1,5 +1,8 @@
-﻿using System;
+﻿using MediaConverter.ViewModels;
+using MediaConverter.Views;
+using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -20,15 +23,20 @@ namespace MediaConverter
     /// </summary>
     public partial class MainWindow : Window
     {
+        RecoveryWindow _recoveryWindow = new RecoveryWindow();
+
+
+
+
         public MainWindow()
         {
             DataContext = new MainWindowModel();
             InitializeComponent();
         }
 
-        private void Button_Click(object sender, RoutedEventArgs e)
+        private void button1_Click(object sender, RoutedEventArgs e)
         {
-
+            ContainerView.Child = _recoveryWindow;
         }
     }
 }

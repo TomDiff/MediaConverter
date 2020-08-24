@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MediaConverter"
         mc:Ignorable="d"
-        Title="SHE mediaCoverter" Height="450"  Width="1400">
+        Title="SHE mediaCoverter" Height="450"  MaxWidth="1400">
 
     <Grid Name="MainGrid" Background="#FFF3F3F3">
         <Grid Name="NavigationGridLeft" Background="White" HorizontalAlignment="Left" Width="250" >
@@ -18,7 +18,9 @@
                             Background="#FFFAFA" 
                             BorderThickness="0" 
                             Content="Original wiederherstellen"
-                            Command="{Binding ClickCommand}"/>
+                            Command="{Binding ClickCommand}"
+                            Click="button1_Click"/>
+
                     <Button Background="#FFFAFA" BorderThickness="0" Content="Belegseiten reparieren"/>
                     <TextBlock Text="Konvertieren" FontSize="16" FontWeight="Thin"/>
                     <TextBlock Text="mit DB Eintrag"/>
@@ -29,47 +31,7 @@
                 </StackPanel>
             </StackPanel>
         </Grid>
-        <Grid Name="ContentGrid" Background="#FFFAFA" Margin="250,0,0,0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto"/>
-                <RowDefinition Height="*"/>
-                <RowDefinition Height="20"/>
-            </Grid.RowDefinitions>
-            <StackPanel Name="TopGrid" Grid.Row="0" Background="White" Orientation="Horizontal" VerticalAlignment="Top" Height="50" >
-                <!--Ergänzen!!!-->
-                <TextBox Name="TextBoxSelectAnweisung"  
-                         Height="30"
-                         Width="930"
-                         Padding="5" 
-                         BorderBrush="#FFDCDCDC"
-                         Text="{Binding Objekt.Property}">
-                </TextBox>
-                <!--Ergänzen!!!-->
-                <StackPanel Name="StartAbrechenPanel" Orientation="Horizontal" Height="30" Margin="40,0,0,0">
-                    <Button Name="VerbindenButton" Content="Verbinden" Command="{Binding ClickCommand}"  
-                            Padding="5,5,5,5" 
-                            Background="White" 
-                            BorderThickness="0,0.5,0,0.5" 
-                            BorderBrush="#31B404"/>
-
-                    <!--Ergänzen!!!-->
-                    <Button  Name="AbbrechenButton" Content="Abbrechen"  Command="{Binding ClickCommand}" 
-                            Margin="10,0,0,0" 
-                             Padding="5,5,5,5" 
-                             Background="White" 
-                             BorderThickness="0,0.5,0,0.5" 
-                             BorderBrush="#FF0000"/>
-                </StackPanel>
-            </StackPanel>
-            <DataGrid Name="DataGridRecovery" Grid.Row="1" ItemsSource="{Binding Objekt}">
-                <DataGrid.Columns>
-                    <DataGridTextColumn  Header="Beleg_ID" Width="*" Binding="{Binding Beleg_ID}"/>
-                    <DataGridTextColumn  Header="Seiten" Width="*" Binding="{Binding Seiten}"/>
-                    <DataGridTextColumn  Header="Ablagecode" Width="*" Binding="{Binding Ablagecode}"/>
-                    <DataGridTextColumn  Header="Wiederherstellen?" Width="*" />
-                </DataGrid.Columns>
-            </DataGrid>
-            <TextBlock Grid.Row="2" Margin="5,50,5,0"  Text="dshfghsdgfhsjdgf"></TextBlock>
-        </Grid>
+        <!--ContainerView-->
+        <Viewbox Name="ContainerView" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,0,0,0" Height="800" Width="Auto"/>  
     </Grid>
 </Window>
