@@ -23,7 +23,7 @@ namespace MediaConverter
     /// </summary>
     public partial class MainWindow : Window
     {
-        RecoveryWindow _recoveryWindow = new RecoveryWindow();
+        RecoveryOriginalView _recoveryWindow = new RecoveryOriginalView();
 
 
 
