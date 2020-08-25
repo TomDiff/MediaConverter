@@ -28,12 +28,12 @@ namespace MediaConverter
 
         #endregion Properties
         #region Commands
-        private ICommand _doubleClickRecoveryOriginal;
-        public ICommand DoubleClickRecoveryOriginal
+        private ICommand _ClickRecoveryOriginal;
+        public ICommand ClickRecoveryOriginal
         {
             get
             {
-                return _doubleClickRecoveryOriginal ?? (_doubleClickRecoveryOriginal = new RelayCommand<object>(x => { OpenRecoveryOriginalView(); }));
+                return _ClickRecoveryOriginal ?? (_ClickRecoveryOriginal = new RelayCommand<object>(x => { OpenRecoveryOriginalView(); }));
             }
         }
         #endregion Commands

@@ -18,7 +18,7 @@
                             Background="#FFFAFA" 
                             BorderThickness="0" 
                             Content="Original wiederherstellen"
-                            Command="{Binding DoubleClickRecoveryOriginal}"/>
+                            Command="{Binding ClickRecoveryOriginal}"/>
 
                     <Button Background="#FFFAFA" BorderThickness="0" Content="Belegseiten reparieren"/>
                     <TextBlock Text="Konvertieren" FontSize="16" FontWeight="Thin"/>

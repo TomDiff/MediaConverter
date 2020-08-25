@@ -23,20 +23,10 @@ namespace MediaConverter
     /// </summary>
     public partial class MainWindow : Window
     {
-      //  RecoveryOriginalView _recoveryWindow = new RecoveryOriginalView();
-
-
-
-
         public MainWindow()
         {
-            //DataContext = new MainWindowModel();
+            DataContext = new MainWindowModel();
             InitializeComponent();
         }
-        //der ClickEventHandler muss noch verschwinden
-        //private void button1_Click(object sender, RoutedEventArgs e)
-        //{
-        //    ContainerView.Child = _recoveryWindow;
-        //}
     }
 }
