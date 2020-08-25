@@ -43,6 +43,7 @@ namespace MediaConverter
             check.Nodes.Add(new TreeNode() { Select = "für Original" });
             check.Nodes.Add(new TreeNode() { Select = "ohne Original" });
             treeList.Add(check);
+
             //Zweig Ereignisprotokoll
             Tree log = new Tree() { Headline = "Ereignisprotokoll" };
             treeList.Add(log);
