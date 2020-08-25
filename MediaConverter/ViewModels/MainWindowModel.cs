@@ -1,8 +1,11 @@
-﻿using System;
+﻿using MediaConverter.Helper;
+using MediaConverter.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace MediaConverter
 {
@@ -25,16 +28,19 @@ namespace MediaConverter
         #endregion Properties
         #region Commands
         private ICommand _doubleClickRecoveryOriginal;
-        public ICommand DoubleClickCommand
+        public ICommand DoubleClickRecoveryOriginal
         {
             get
             {
-                return _doubleClickCommand ?? (_doubleClickCommand = new RelayCommand<object>(x => { EditSelectedCharakter(); }));
+                return _doubleClickRecoveryOriginal ?? (_doubleClickRecoveryOriginal = new RelayCommand<object>(x => { OpenRecoveryOriginalView(); }));
             }
         }
         #endregion Commands
         #region Methods
-
+        private void OpenRecoveryOriginalView()
+        {
+           // ContainerView.Child = _recoveryWindow;
+        }
         #endregion Methods
         #region Eventhandler
 

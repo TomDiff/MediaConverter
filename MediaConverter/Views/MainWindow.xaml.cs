@@ -34,9 +34,9 @@ namespace MediaConverter
             InitializeComponent();
         }
         //der ClickEventHandler muss noch verschwinden
-        private void button1_Click(object sender, RoutedEventArgs e)
-        {
-            ContainerView.Child = _recoveryWindow;
-        }
+        //private void button1_Click(object sender, RoutedEventArgs e)
+        //{
+        //    ContainerView.Child = _recoveryWindow;
+        //}
     }
 }
