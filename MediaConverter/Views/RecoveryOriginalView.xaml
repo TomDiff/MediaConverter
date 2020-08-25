@@ -5,14 +5,14 @@
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MediaConverter.Views"
              mc:Ignorable="d" 
-             d:DesignHeight="450" d:DesignWidth="1150">
-    <Grid Name="RecoveryGrid" Height="450" Width="1150" Background="#FFF3F3F3">
+             d:DesignHeight="700" d:DesignWidth="1150">
+    <Grid Name="RecoveryGrid" Height="700" Width="1150" Background="#FFF3F3F3">
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="*"/>
             <ColumnDefinition Width="Auto"/>
         </Grid.ColumnDefinitions>
         
-        <Grid Name="ContentGrid" Background="#FFFAFA" Margin="0,0,0,0" Grid.ColumnSpan="2">
+        <Grid Name="ContentGrid" Background="blue" Margin="0,0,0,0">
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
@@ -56,9 +56,9 @@
                 </DataGrid.Columns>
             </DataGrid>
             
-        </Grid>
-        <Grid Name="FooterGrid" Grid.Row="2">
-            <StackPanel Name="Panel" Orientation="Horizontal" Height="30" Margin="40,0,0,0">
+        
+        
+            <StackPanel Name="Panel" Grid.Row="3" Orientation="Horizontal"  Height="30" Margin="0,0,0,0" >
                 <Button Name="Button" Content="Verbinden" Command="{Binding ClickCommand}"  
                             Padding="5,5,5,5" 
                             Background="White" 
@@ -73,6 +73,9 @@
                              BorderThickness="0,0.5,0,0.5" 
                              BorderBrush="#FF0000"/>
             </StackPanel>
+
+
         </Grid>
+
     </Grid>
 </UserControl>
