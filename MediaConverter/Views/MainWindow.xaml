@@ -32,7 +32,7 @@
         </Grid>
         <!--ContainerView-->
         
-        <Viewbox Name="ContainerView" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,0,10,0" Height="Auto" Width="Auto"/>
+        <Viewbox Name="ContainerView" HorizontalAlignment="left" VerticalAlignment="Top" Margin="250,0,0,0" />
         
     </Grid>
 </Window>

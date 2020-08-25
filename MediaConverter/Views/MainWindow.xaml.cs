@@ -30,7 +30,7 @@ namespace MediaConverter
 
         public MainWindow()
         {
-            DataContext = new MainWindowModel();
+            //DataContext = new MainWindowModel();
             InitializeComponent();
         }
         //der ClickEventHandler muss noch verschwinden
