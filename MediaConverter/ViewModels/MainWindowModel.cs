@@ -1,43 +1,50 @@
-﻿using System;
+﻿using MediaConverter.Helper;
+using MediaConverter.Views;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows.Input;
 
 namespace MediaConverter
 {
-//   public class MainWindowModel
-//    {
-//        #region Locals
+   public class MainWindowModel
+    {
+        #region Locals
 
-//        #endregion Locals
-//        #region Events
+        #endregion Locals
+        #region Events
 
-//        #endregion Events
-//        #region Constructor
-//        public MainWindowModel()
-//        {
+        #endregion Events
+        #region Constructor
+        public MainWindowModel()
+        {
 
-//        }
-//        #endregion Constructor
-//        #region Properties
+        }
+        #endregion Constructor
+        #region Properties
 
-//        #endregion Properties
-//        #region Commands
-//        private ICommand _doubleClickRecoveryOriginal;
-//        public ICommand DoubleClickCommand
-//        {
-//            get
-//            {
-//                return _doubleClickCommand ?? (_doubleClickCommand = new RelayCommand<object>(x => { EditSelectedCharakter(); }));
-//            }
-//        }
-//        #endregion Commands
-//        #region Methods
+        #endregion Properties
+        #region Commands
+        private ICommand _doubleClickRecoveryOriginal;
+        public ICommand DoubleClickRecoveryOriginal
+        {
+            get
+            {
+                return _doubleClickRecoveryOriginal ?? (_doubleClickRecoveryOriginal = new RelayCommand<object>(x => { OpenRecoveryOriginalView(); }));
+            }
+        }
+        #endregion Commands
+        #region Methods
+        private void OpenRecoveryOriginalView()
+        {
+            RecoveryOriginalView _recoveryOriginalView = new RecoveryOriginalView();
+            ContainerView.Child = _recoveryOriginalView;
+        }
+        #endregion Methods
+        #region Eventhandler
 
-//        #endregion Methods
-//        #region Eventhandler
-
-//        #endregion Eventhandler
-//    }
+        #endregion Eventhandler
+    }
 }
