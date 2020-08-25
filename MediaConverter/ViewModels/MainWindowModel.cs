@@ -15,13 +15,23 @@ namespace MediaConverter
 
         #endregion Events
         #region Constructor
+        public MainWindowModel()
+        {
 
+        }
         #endregion Constructor
         #region Properties
 
         #endregion Properties
         #region Commands
-
+        private ICommand _doubleClickRecoveryOriginal;
+        public ICommand DoubleClickCommand
+        {
+            get
+            {
+                return _doubleClickCommand ?? (_doubleClickCommand = new RelayCommand<object>(x => { EditSelectedCharakter(); }));
+            }
+        }
         #endregion Commands
         #region Methods
 
