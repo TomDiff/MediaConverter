@@ -9,6 +9,7 @@
 
     <Grid Name="MainGrid" Background="Tomato"><!--#FFF3F3F3-->
         <Grid Name="NavigationGridLeft" Background="White" HorizontalAlignment="Left" Width="250" >
+            <ContentControl Content="{Binding Variable}"/>
             <StackPanel Name="NavigationLeft">
                 <TextBlock Text="mediaConverter" FontSize="30" FontWeight="Light" Padding="5" Background="White" Foreground="#FFA4A3A4"/>
                 <StackPanel HorizontalAlignment="Center">
@@ -32,7 +33,9 @@
         </Grid>
         <!--ContainerView-->
         
-        <Viewbox Name="ContainerView" HorizontalAlignment="left" VerticalAlignment="Top" Margin="250,0,0,0" />
+        <Viewbox Name="ContainerView" HorizontalAlignment="left" VerticalAlignment="Top" Margin="250,0,0,0"  
+                 
+            />
         
     </Grid>
 </Window>

@@ -1,4 +1,5 @@
-﻿using System;
+﻿using MediaConverter.ViewModels;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -22,6 +23,7 @@ namespace MediaConverter.Views
     {
         public RecoveryOriginalView()
         {
+            this.DataContext = new RecoveryOriginalViewModel();
             InitializeComponent();
         }
     }

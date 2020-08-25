@@ -1,4 +1,5 @@
 ﻿using MediaConverter.Helper;
+using MediaConverter.ViewModels;
 using MediaConverter.Views;
 using System;
 using System.Collections.Generic;
@@ -10,41 +11,50 @@ using System.Windows.Input;
 
 namespace MediaConverter
 {
-   public class MainWindowModel
+    public class MainWindowModel
     {
         #region Locals
 
         #endregion Locals
+
         #region Events
 
         #endregion Events
+
         #region Constructor
         public MainWindowModel()
         {
 
         }
         #endregion Constructor
-        #region Properties
 
+        #region Properties
+        public RecoveryOriginalView _currentView { get; set; }
+        
         #endregion Properties
+
         #region Commands
         private ICommand _ClickRecoveryOriginal;
         public ICommand ClickRecoveryOriginal
         {
             get
             {
-                return _ClickRecoveryOriginal ?? (_ClickRecoveryOriginal = new RelayCommand<object>(x => { OpenRecoveryOriginalView(); }));
+                return _ClickRecoveryOriginal ?? (_ClickRecoveryOriginal = new RelayCommand<object>(x => { LoadUserControl(); }));
             }
         }
         #endregion Commands
+
         #region Methods
-        private void OpenRecoveryOriginalView()
+        private void LoadUserControl()
         {
-            RecoveryOriginalView _recoveryOriginalView = new RecoveryOriginalView();
-            //   ContainerView.Child = _recoveryOriginalView;
-            MessageBox.Show("Hello");
+            
+
+          
+             MessageBox.Show("Hello");
+
         }
         #endregion Methods
+
         #region Eventhandler
 
         #endregion Eventhandler

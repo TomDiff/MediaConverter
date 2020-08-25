@@ -30,3 +30,18 @@ namespace MediaConverter
         }
     }
 }
+
+
+//public MainWindow()
+//{
+//    DataContext = new MainWindowModel();
+//    InitializeComponent();
+//}
+//      RecoveryOriginalView _recoveryOriginalView = new RecoveryOriginalViewModel();
+
+//
+//      private void button1_Click(object sender, RoutedEventArgs e)
+//      {
+//      ContainerView.Child = _recoveryWindow;
+//      }
+//   }
