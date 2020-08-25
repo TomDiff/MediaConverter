@@ -63,6 +63,8 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="Helper\RelayCommand.cs" />
+    <Compile Include="Models\Tree.cs" />
+    <Compile Include="Models\TreeNode.cs" />
     <Compile Include="Views\RecoveryOriginalView.xaml.cs">
       <DependentUpon>RecoveryOriginalView.xaml</DependentUpon>
     </Compile>
