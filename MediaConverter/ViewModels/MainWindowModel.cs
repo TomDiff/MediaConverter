@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Windows;
 using System.Windows.Input;
 
 namespace MediaConverter
@@ -40,7 +41,8 @@ namespace MediaConverter
         private void OpenRecoveryOriginalView()
         {
             RecoveryOriginalView _recoveryOriginalView = new RecoveryOriginalView();
-            ContainerView.Child = _recoveryOriginalView;
+            //   ContainerView.Child = _recoveryOriginalView;
+            MessageBox.Show("Hello");
         }
         #endregion Methods
         #region Eventhandler
