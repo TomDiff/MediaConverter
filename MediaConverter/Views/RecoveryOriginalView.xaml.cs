@@ -18,9 +18,9 @@ namespace MediaConverter.Views
     /// <summary>
     /// Interaktionslogik für RecoveryWindow.xaml
     /// </summary>
-    public partial class RecoveryWindow : UserControl
+    public partial class RecoveryOriginalView : UserControl
     {
-        public RecoveryWindow()
+        public RecoveryOriginalView()
         {
             InitializeComponent();
         }

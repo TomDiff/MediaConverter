@@ -62,8 +62,8 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="Views\RecoveryWindow.xaml.cs">
-      <DependentUpon>RecoveryWindow.xaml</DependentUpon>
+    <Compile Include="Views\RecoveryOriginalView.xaml.cs">
+      <DependentUpon>RecoveryOriginalView.xaml</DependentUpon>
     </Compile>
     <Page Include="Views\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -80,7 +80,7 @@
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Page Include="Views\RecoveryWindow.xaml">
+    <Page Include="Views\RecoveryOriginalView.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

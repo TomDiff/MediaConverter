@@ -5,7 +5,7 @@
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MediaConverter"
         mc:Ignorable="d"
-        Title="SHE mediaCoverter" Height="450"  MaxWidth="1400">
+        Title="SHE mediaCoverter" Height="500"  MaxWidth="1400">
 
     <Grid Name="MainGrid" Background="#FFF3F3F3">
         <Grid Name="NavigationGridLeft" Background="White" HorizontalAlignment="Left" Width="250" >
@@ -32,6 +32,8 @@
             </StackPanel>
         </Grid>
         <!--ContainerView-->
-        <Viewbox Name="ContainerView" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,0,0,0" Height="800" Width="Auto"/>  
+        <Border BorderThickness="3" Background="Aqua" >
+        <Viewbox Name="ContainerView" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="250,0,0,0" Height="800" Width="Auto"/>
+        </Border>
     </Grid>
 </Window>
