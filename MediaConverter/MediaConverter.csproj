@@ -62,6 +62,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Helper\RelayCommand.cs" />
     <Compile Include="Views\RecoveryWindow.xaml.cs">
       <DependentUpon>RecoveryWindow.xaml</DependentUpon>
     </Compile>
