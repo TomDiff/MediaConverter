@@ -39,7 +39,8 @@ namespace MediaConverter
         #region Methods
         private void OpenRecoveryOriginalView()
         {
-           // ContainerView.Child = _recoveryWindow;
+            RecoveryOriginalView _recoveryOriginalView = new RecoveryOriginalView();
+            ContainerView.Child = _recoveryOriginalView;
         }
         #endregion Methods
         #region Eventhandler
