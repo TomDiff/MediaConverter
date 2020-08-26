@@ -8,7 +8,6 @@ namespace MediaConverter.Models
 {
    public class TreeNode
     {
-
         public String Select { get; set; }
     }
 }
