@@ -26,7 +26,7 @@ namespace MediaConverter
         public MainWindowModel()
         {   
             //Selections the user can choose (recover, convert, check or read logfile) in a treeview
-            //Auswahl, die der Nutzer wählen kann in einer Treeview
+            //Auswahl, die der Nutzer wählen kann, dargestellt als Baum
             
             List<Tree> treeList = new List<Tree>();
             //Treenode recover and repair   //Zweig wiederherstellen und reparieren
