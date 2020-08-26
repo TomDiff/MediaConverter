@@ -47,7 +47,7 @@ namespace MediaConverter
             Tree log = new Tree() { Headline = "Ereignisprotokoll" };
             treeList.Add(log);
 
-            trvNodes.ItemsSource = treeList;
+            //trvNodes.ItemsSource = treeList;
         }
 
         #endregion Constructor
