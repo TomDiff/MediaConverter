@@ -4,6 +4,7 @@ using MediaConverter.ViewModels;
 using MediaConverter.Views;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -28,7 +29,7 @@ namespace MediaConverter
             //Selections the user can choose (recover, convert, check or read logfile) in a treeview
             //Auswahl, die der Nutzer wählen kann, dargestellt als Baum
             
-            List<Tree> treeList = new List<Tree>();
+            treeList = new List<Tree>();
             //Treenode recover and repair   //Zweig wiederherstellen und reparieren
             Tree recover = new Tree() { Headline = "Wiederherstellen und reparieren" };     //Headlines of the treenodes 
             recover.Nodes.Add(new TreeNode() { Select = "Original wiederherstellen" });         //Treenodes (subselections to click)
@@ -38,7 +39,7 @@ namespace MediaConverter
             //Treenode convert file         //Zweig konvertieren
             Tree convert = new Tree() { Headline = "Konvertieren" };
             convert.Nodes.Add(new TreeNode() { Select = "mit DB-Eintrag" });
-            convert.Nodes.Add(new TreeNode() { Select = "mit DB-Eintrag" });
+            convert.Nodes.Add(new TreeNode() { Select = "ohne DB-Eintrag" });
             treeList.Add(convert);
 
             //Treenode check file           //Zweig prüfen
@@ -49,19 +50,24 @@ namespace MediaConverter
 
             //Treenode logfile              //Zweig Ereignisprotokoll
             Tree log = new Tree() { Headline = "Ereignisprotokoll" };
+            log.Nodes.Add(new TreeNode() { Select = "Logfile ansehen" });
             treeList.Add(log);
 
-            // NameDesTreeViews.ItemsSource =  treeList
+           
         }
 
         #endregion Constructor
 
         #region Properties
         public RecoveryOriginalView _currentView { get; set; }
+
+        public List<Tree> treeList { get; set; }
+        public ObservableCollection<TreeNode> Nodes { get; set; }
         #endregion Properties
+
+        #region Commands
         //command for the Selection if the user wants to recover, convert or check the files
         //command für die Auswahl, ob der User wiederherstellen, konvertieren oder prüfen will
-        #region Commands
         private ICommand _ClickSelect;
         public ICommand ClickSelect
         {

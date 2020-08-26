@@ -12,7 +12,8 @@ namespace MediaConverter.Models
     {
         public Tree()
         {
-            this.Nodes = new ObservableCollection<TreeNode>();
+            Nodes = new ObservableCollection<TreeNode>();
+
         }
         public string Headline { get; set; }
 
