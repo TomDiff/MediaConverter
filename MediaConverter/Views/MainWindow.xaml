@@ -6,14 +6,34 @@
         xmlns:local="clr-namespace:MediaConverter"
         xmlns:self="clr-namespace:MediaConverter.Models"
         mc:Ignorable="d"
-        Title="SHE | MediaCoverter" Height="600"  Width="800">
+        Title="SHE | MediaCoverter" Height="600"  Width="Auto" Background="#FFE8E6E6">
 
-    <Grid Name="MainGrid" Background="#FFE8E6E6">
+    <Grid Name="MainGrid" Margin="10">
         <Grid.ColumnDefinitions>
-            <ColumnDefinition MinWidth="200"/>
+            <ColumnDefinition Width="200"/>
+            <ColumnDefinition Width="*"/>
+         </Grid.ColumnDefinitions>
 
-        </Grid.ColumnDefinitions>
-        <TreeView Name="trvNodes">
+        <StackPanel Name="NavigationLeft" Margin="0,0,10,0" Orientation="Vertical"  >
+            <TextBlock Text="Converter Auswahl" Margin="0,0,0,10"/>
+            <Border Background="Aqua" CornerRadius="5">
+                <!--Tree Platzhalter-->
+                 
+            </Border>
+        </StackPanel>
+        <Border Grid.Column="1" 
+                Background="#FFEEEEEE" CornerRadius="5">        
+            <ContentControl Grid.Column="1"  Content="{Binding CurrentPageViewModel}" />
+        </Border>
+
+
+
+
+
+
+
+
+        <!--<TreeView Name="trvNodes">
             <TreeView.Resources>
                 <HierarchicalDataTemplate DataType="{x:Type self:Tree}" ItemsSource="{Binding Nodes}">
                     <StackPanel Orientation="Horizontal">
@@ -34,6 +54,15 @@
                     </StackPanel>
                 </DataTemplate>
             </TreeView.Resources>
-        </TreeView>
+        </TreeView>-->
+
+        <!--<Grid Background="White" HorizontalAlignment="Right" VerticalAlignment="Top"  >
+            --><!-- overlay with hint text --><!--
+            <TextBlock Margin="5,2" MinWidth="50" Text="Suche..." 
+                   Foreground="LightSteelBlue" Visibility="{Binding ElementName=txtSearchBox, Path=Text.IsEmpty, Converter={StaticResource MyBoolToVisibilityConverter}}" />
+            --><!-- enter term here --><!--
+            <TextBox MinWidth="50" Name="txtSearchBox" Background="Transparent" />
+        </Grid>-->
+
     </Grid>
 </Window>
