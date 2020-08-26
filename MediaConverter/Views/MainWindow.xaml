@@ -4,38 +4,36 @@
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
         xmlns:local="clr-namespace:MediaConverter"
+        xmlns:self="clr-namespace:MediaConverter.Models"
         mc:Ignorable="d"
-        Title="SHE mediaCoverter" Height="700"  MaxWidth="1400">
+        Title="SHE MediaCoverter" Height="600"  Width="800">
 
-    <Grid Name="MainGrid" Background="Tomato"><!--#FFF3F3F3-->
-        <Grid Name="NavigationGridLeft" Background="White" HorizontalAlignment="Left" Width="250" >
-            <ContentControl Content="{Binding Variable}"/>
-            <StackPanel Name="NavigationLeft">
-                <TextBlock Text="mediaConverter" FontSize="30" FontWeight="Light" Padding="5" Background="White" Foreground="#FFA4A3A4"/>
-                <StackPanel HorizontalAlignment="Center">
-                    <TextBlock Text="Wiederherstellen und reparieren" FontSize="16" FontWeight="Thin"/>
-                    <!--Ergänzen!!!-->
-                    <Button Name="RecoveryButton" 
-                            Background="#FFFAFA" 
-                            BorderThickness="0" 
-                            Content="Original wiederherstellen"
-                            Command="{Binding ClickRecoveryOriginal}"/>
+    <Grid Name="MainGrid" Background="#FFE8E6E6">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition MinWidth="200"/>
 
-                    <Button Background="#FFFAFA" BorderThickness="0" Content="Belegseiten reparieren"/>
-                    <TextBlock Text="Konvertieren" FontSize="16" FontWeight="Thin"/>
-                    <TextBlock Text="mit DB Eintrag"/>
-                    <TextBlock Text="ohne DB Eintrag"/>
-                    <TextBlock Text="Ablagecode prüfen" FontSize="16" FontWeight="Thin"/>
-                    <TextBlock Text="für Original"/>
-                    <TextBlock Text="ohne Original"/>
-                </StackPanel>
-            </StackPanel>
-        </Grid>
-        <!--ContainerView-->
-        
-        <Viewbox Name="ContainerView" HorizontalAlignment="left" VerticalAlignment="Top" Margin="250,0,0,0"  
-                 
-            />
-        
+        </Grid.ColumnDefinitions>
+        <TreeView Name="trvNodes">
+            <TreeView.Resources>
+                <HierarchicalDataTemplate DataType="{x:Type self:Tree}" ItemsSource="{Binding Nodes}">
+                    <StackPanel Orientation="Horizontal">
+                        
+                        <TextBlock Text="{Binding HeadLine}" />
+                        <TextBlock Text=" [" Foreground="Blue" />
+                        <TextBlock Text="{Binding Nodes.Count}" Foreground="Blue" />
+                        <TextBlock Text="]" Foreground="Blue" />
+                    </StackPanel>
+                </HierarchicalDataTemplate>
+                <DataTemplate DataType="{x:Type self:TreeNode}">
+                    <StackPanel Orientation="Horizontal">
+                        
+                        <TextBlock Text="{Binding Name}" />
+                        <TextBlock Text=" (" Foreground="Green" />
+                        <TextBlock Text="{Binding Age}" Foreground="Green" />
+                        <TextBlock Text=" years)" Foreground="Green" />
+                    </StackPanel>
+                </DataTemplate>
+            </TreeView.Resources>
+        </TreeView>
     </Grid>
 </Window>
