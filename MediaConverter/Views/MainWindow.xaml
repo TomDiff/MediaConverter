@@ -6,7 +6,7 @@
         xmlns:local="clr-namespace:MediaConverter"
         xmlns:self="clr-namespace:MediaConverter.Models"
         mc:Ignorable="d"
-        Title="SHE MediaCoverter" Height="600"  Width="800">
+        Title="SHE | MediaCoverter" Height="600"  Width="800">
 
     <Grid Name="MainGrid" Background="#FFE8E6E6">
         <Grid.ColumnDefinitions>
