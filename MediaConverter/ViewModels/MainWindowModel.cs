@@ -25,35 +25,35 @@ namespace MediaConverter
 
         #region Constructor
         public MainWindowModel()
-        {   
+        {
             //Selections the user can choose (recover, convert, check or read logfile) in a treeview
             //Auswahl, die der Nutzer wählen kann, dargestellt als Baum
-            
+
             treeList = new List<Tree>();
             //Treenode recover and repair   //Zweig wiederherstellen und reparieren
-            Tree recover = new Tree() { Headline = "Wiederherstellen und reparieren" };     //Headlines of the treenodes 
+            Tree recover = new Tree() { Image = "/SE.ico", HeadLine = "Wiederherstellen und reparieren" };     //Headlines of the treenodes 
             recover.Nodes.Add(new TreeNode() { Select = "Original wiederherstellen" });         //Treenodes (subselections to click)
             recover.Nodes.Add(new TreeNode() { Select = "Belegseiten reparieren" });
             treeList.Add(recover);
 
             //Treenode convert file         //Zweig konvertieren
-            Tree convert = new Tree() { Headline = "Konvertieren" };
+            Tree convert = new Tree() { HeadLine = "Konvertieren" };
             convert.Nodes.Add(new TreeNode() { Select = "mit DB-Eintrag" });
             convert.Nodes.Add(new TreeNode() { Select = "ohne DB-Eintrag" });
             treeList.Add(convert);
 
             //Treenode check file           //Zweig prüfen
-            Tree check = new Tree() { Headline = "Ablagecode prüfen" };
+            Tree check = new Tree() { HeadLine = "Ablagecode prüfen" };
             check.Nodes.Add(new TreeNode() { Select = "für Original" });
             check.Nodes.Add(new TreeNode() { Select = "ohne Original" });
             treeList.Add(check);
 
             //Treenode logfile              //Zweig Ereignisprotokoll
-            Tree log = new Tree() { Headline = "Ereignisprotokoll" };
+            Tree log = new Tree() { HeadLine = "Ereignisprotokoll" };
             log.Nodes.Add(new TreeNode() { Select = "Logfile ansehen" });
             treeList.Add(log);
 
-           
+
         }
 
         #endregion Constructor
@@ -83,9 +83,9 @@ namespace MediaConverter
         //Stringabgleich von "select" (Auswahl), der dann dem Content Binding sagt, welche Usercontrol geladen wird
         private void LoadUserControl()
         {
-            
-             //$Übergabe von select an Content$      
-             MessageBox.Show("Hello");
+
+            //$Übergabe von select an Content$      
+            MessageBox.Show("Hello");
 
         }
         #endregion Methods

@@ -1,4 +1,5 @@
-﻿using System;
+﻿
+using System;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Linq;
@@ -13,10 +14,9 @@ namespace MediaConverter.Models
         public Tree()
         {
             Nodes = new ObservableCollection<TreeNode>();
-
         }
-        public string Headline { get; set; }
-
+        public string HeadLine { get; set; }
+        public string Image { get; set; }
         public ObservableCollection<TreeNode> Nodes { get; set; }
     }
 }
