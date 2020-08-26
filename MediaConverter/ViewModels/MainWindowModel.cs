@@ -28,7 +28,7 @@ namespace MediaConverter
         {
             //Selections the user can choose (recover, convert, check or read logfile) in a treeview
             //Auswahl, die der Nutzer wählen kann, dargestellt als Baum
-
+            
             treeList = new List<Tree>();
             //Treenode recover and repair   //Zweig wiederherstellen und reparieren
             Tree recover = new Tree() { HeadLine = "Wiederherstellen und reparieren" };     //Headlines of the treenodes 
@@ -49,11 +49,11 @@ namespace MediaConverter
             treeList.Add(check);
 
             //Treenode logfile              //Zweig Ereignisprotokoll
-            Tree log = new Tree() { HeadLine = "Ereignisprotokoll" };
+            Tree log = new Tree() { Headline = "Ereignisprotokoll" };
             log.Nodes.Add(new TreeNode() { Select = "Logfile ansehen" });
             treeList.Add(log);
 
-
+           
         }
 
         #endregion Constructor
