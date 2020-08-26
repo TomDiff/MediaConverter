@@ -6,18 +6,18 @@
         xmlns:local="clr-namespace:MediaConverter"
         xmlns:self="clr-namespace:MediaConverter.Models"
         mc:Ignorable="d"
-        Title="SHE MediaCoverter" Height="600"  Width="800">
+        Title="SHE | MediaCoverter" Height="600"  Width="800">
 
     <Grid Name="MainGrid" Background="#FFE8E6E6">
         <Grid.ColumnDefinitions>
             <ColumnDefinition MinWidth="200"/>
 
         </Grid.ColumnDefinitions>
-        <TreeView Name="trvNodes">
+        <TreeView Name="trvNodes" ItemsSource="{Binding treeList}">
             <TreeView.Resources>
                 <HierarchicalDataTemplate DataType="{x:Type self:Tree}" ItemsSource="{Binding Nodes}">
                     <StackPanel Orientation="Horizontal">
-                        
+
                         <TextBlock Text="{Binding HeadLine}" />
                         <TextBlock Text=" [" Foreground="Blue" />
                         <TextBlock Text="{Binding Nodes.Count}" Foreground="Blue" />
@@ -26,11 +26,9 @@
                 </HierarchicalDataTemplate>
                 <DataTemplate DataType="{x:Type self:TreeNode}">
                     <StackPanel Orientation="Horizontal">
-                        
-                        <TextBlock Text="{Binding Name}" />
-                        <TextBlock Text=" (" Foreground="Green" />
-                        <TextBlock Text="{Binding Age}" Foreground="Green" />
-                        <TextBlock Text=" years)" Foreground="Green" />
+
+                        <TextBlock Text="{Binding Select}" />
+
                     </StackPanel>
                 </DataTemplate>
             </TreeView.Resources>
