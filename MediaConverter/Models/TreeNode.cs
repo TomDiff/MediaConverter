@@ -13,5 +13,7 @@ namespace MediaConverter.Models
         //(zum Laden des richtigen Usercontrols)
         public string Select { get; set; }
         public int Case { get; set; }
+
+        
     }
 }

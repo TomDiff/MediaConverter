@@ -81,17 +81,17 @@ namespace MediaConverter
         //Stringcompare of "select" to load the needed usercontrol
         //Stringabgleich von "select" (Auswahl), der dann dem Content Binding sagt, welche Usercontrol geladen wird
         private void LoadUserControl()
-        {   
+        {
             //Test für Commandfunktionalität
 
-            //Selection = "Original wiederherstellen";
-            ////$Übergabe von select an Content$      
-            //switch (Selection)
-            //{
-            //   case "Original wiederherstellen":
-                 MessageBox.Show("Hello");
-            //   break;
-            //}
+            Selection = "Original wiederherstellen";
+            //$Übergabe von select an Content$      
+            switch (Selection)
+            {
+                case "Original wiederherstellen":
+                    MessageBox.Show(Selection);
+                    break;
+            }
         }           
             #endregion Methods
 
