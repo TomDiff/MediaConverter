@@ -45,7 +45,7 @@
                             <StackPanel Orientation="Horizontal" Margin="5,0,0,0">
 
                                 <TextBlock Text="{Binding Select}" 
-                                           FontSize="13" FontWeight="Normal" Foreground="#FF4F4F4F"/>
+                                           FontSize="13" FontWeight="Normal" Foreground="#FF4F4F4F"  />
 
                             </StackPanel>
                         </DataTemplate>

@@ -72,7 +72,7 @@ namespace MediaConverter
         {
             get
             {
-                return _ClickSelect ?? (_ClickSelect = new RelayCommand<object>(x => { LoadUserControl(); }));
+                return _ClickSelect ?? (_ClickSelect = new RelayCommand<object>(x => { Mediator.Notify("GoTo2Screen", ""); }));
             }
         }
         #endregion Commands
@@ -82,16 +82,21 @@ namespace MediaConverter
         //Stringabgleich von "select" (Auswahl), der dann dem Content Binding sagt, welche Usercontrol geladen wird
         private void LoadUserControl()
         {
+
+            //RecoveryOriginalView recoveryOriginalView = new RecoveryOriginalView();
+            
+            
+            
             //Test für Commandfunktionalität
 
-            Selection = "Original wiederherstellen";
+            //Selection = Select;
             //$Übergabe von select an Content$      
-            switch (Selection)
-            {
-                case "Original wiederherstellen":
-                    MessageBox.Show(Selection);
-                    break;
-            }
+            //switch (Selection)
+            //{
+            //    case "Original wiederherstellen":
+            //        MessageBox.Show(Selection);
+            //        break;
+            //}
         }           
             #endregion Methods
 
