@@ -4,23 +4,18 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MediaConverter.Views"
-             mc:Ignorable="d" >
-    <!--d:DesignHeight="700" d:DesignWidth="1250" >-->
+             mc:Ignorable="d" d:DesignHeight="600" d:DesignWidth="800" Background="#FFE8E6E6">
 
-    <Grid Name="RecoveryGrid" Height="700" Width="Auto" Background="#FFF3F3F3">
-        <!--Height="700" Width="1150"-->
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="1250"/>
-        </Grid.ColumnDefinitions>
-        
-        <Grid Name="ContentGrid" Background="blue" Margin="0,0,0,0" MinHeight="700">
+    <Grid Name="RecoveryGrid" Background="blue">
+                        
             <Grid.RowDefinitions>
                 <RowDefinition Height="Auto"/>
                 <RowDefinition Height="*"/>
                 <RowDefinition Height="Auto"/>
             </Grid.RowDefinitions>
-            
-            <StackPanel Name="TopGrid" Grid.Row="0" Background="White" Orientation="Horizontal" VerticalAlignment="Top" Height="50" >
+
+        <StackPanel Name="TopGrid" Grid.Row="0" Orientation="Horizontal" VerticalAlignment="Top" Height="50"
+                    Background="orange"  >
                 <!--Ergänzen!!!-->
                 <TextBox Name="TextBoxSelectAnweisung"  
                          Height="30"
@@ -78,5 +73,5 @@
 
         </Grid>
 
-    </Grid>
+    
 </UserControl>
