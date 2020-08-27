@@ -32,8 +32,6 @@ namespace MediaConverter
 
             treeList = new List<Tree>();
             //Treenode recover and repair   //Zweig wiederherstellen und reparieren
-            Tree recover = new Tree() { Image = "/SE.ico", HeadLine = "Wiederherstellen und reparieren" };     //Headlines of the treenodes 
-            recover.Nodes.Add(new TreeNode() { Select = "Original wiederherstellen", Case = 1 });         //Treenodes (subselections to click)
             Tree recover = new Tree() { Image = "/Images/wartungIcon16px.png", HeadLine = "Wiederherstellen und reparieren" };     //Headlines of the treenodes 
             recover.Nodes.Add(new TreeNode() { Select = "Original wiederherstellen" });         //Treenodes (subselections to click)
             recover.Nodes.Add(new TreeNode() { Select = "Belegseiten reparieren" });
@@ -83,24 +81,23 @@ namespace MediaConverter
         //Stringcompare of "select" to load the needed usercontrol
         //Stringabgleich von "select" (Auswahl), der dann dem Content Binding sagt, welche Usercontrol geladen wird
         private void LoadUserControl()
-        {
-            Selection = "Original wiederherstellen";
-            //$Übergabe von select an Content$      
-            switch (Selection)
-            {
-                case "Original wiederherstellen":
-                    MessageBox.Show("Hello");
-                    break;
+        {   
+            //Test für Commandfunktionalität
 
-
-                    //Test für Commandfunktionalität
-
-            }
+            //Selection = "Original wiederherstellen";
+            ////$Übergabe von select an Content$      
+            //switch (Selection)
+            //{
+            //   case "Original wiederherstellen":
+                 MessageBox.Show("Hello");
+            //   break;
+            //}
+        }           
             #endregion Methods
 
             #region Eventhandler
 
             #endregion Eventhandler
-        }
+        
     }
 }

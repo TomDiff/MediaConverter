@@ -21,13 +21,11 @@
             <Border Background="#FFEEEEEE" CornerRadius="5">
                 <TreeView Name="trvNodes" ItemsSource="{Binding treeList}"
                           Background="Transparent" BorderThickness="0" Margin="5,5,10,15" >
-                    
                     <i:Interaction.Triggers>
-                        <i:EventTrigger EventName="TreeViewMouseClick">
-                            <i:InvokeCommandAction Command="{Binding ClickCommand}"/>
+                        <i:EventTrigger EventName="SelectedItemChanged">
+                        <i:InvokeCommandAction Command="{Binding ClickSelect}"/>
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
-
                     <TreeView.Resources>
                         <HierarchicalDataTemplate DataType="{x:Type self:Tree}" ItemsSource="{Binding Nodes}">
                             
