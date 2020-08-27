@@ -34,23 +34,25 @@ namespace MediaConverter
             //Treenode recover and repair   //Zweig wiederherstellen und reparieren
             Tree recover = new Tree() { Image = "/SE.ico", HeadLine = "Wiederherstellen und reparieren" };     //Headlines of the treenodes 
             recover.Nodes.Add(new TreeNode() { Select = "Original wiederherstellen", Case = 1 });         //Treenodes (subselections to click)
+            Tree recover = new Tree() { Image = "/Images/wartungIcon16px.png", HeadLine = "Wiederherstellen und reparieren" };     //Headlines of the treenodes 
+            recover.Nodes.Add(new TreeNode() { Select = "Original wiederherstellen" });         //Treenodes (subselections to click)
             recover.Nodes.Add(new TreeNode() { Select = "Belegseiten reparieren" });
             treeList.Add(recover);
 
             //Treenode convert file         //Zweig konvertieren
-            Tree convert = new Tree() { HeadLine = "Konvertieren" };
+            Tree convert = new Tree() { Image = "/Images/konverterIcon16px.png", HeadLine = "Konvertieren" };
             convert.Nodes.Add(new TreeNode() { Select = "mit DB-Eintrag" });
             convert.Nodes.Add(new TreeNode() { Select = "ohne DB-Eintrag" });
             treeList.Add(convert);
 
             //Treenode check file           //Zweig prüfen
-            Tree check = new Tree() { HeadLine = "Ablagecode prüfen" };
+            Tree check = new Tree() { Image = "/Images/ablageCodeIcon16px.png", HeadLine = "Ablagecode prüfen" };
             check.Nodes.Add(new TreeNode() { Select = "für Original" });
             check.Nodes.Add(new TreeNode() { Select = "ohne Original" });
             treeList.Add(check);
 
             //Treenode logfile              //Zweig Ereignisprotokoll
-            Tree log = new Tree() { HeadLine = "Ereignisprotokoll" };
+            Tree log = new Tree() { Image = "/Images/logData16px.png", HeadLine = "Ereignisprotokoll" };
             log.Nodes.Add(new TreeNode() { Select = "Logfile ansehen" });
             treeList.Add(log);
         }

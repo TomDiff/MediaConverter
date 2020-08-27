@@ -127,5 +127,16 @@
   <ItemGroup>
     <Resource Include="SE.ico" />
   </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Image1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\ablageCodeIcon16px.png" />
+    <Resource Include="Images\logData16px.png" />
+    <Resource Include="Images\wartungIcon16px.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="Images\konverterIcon16px.png" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
