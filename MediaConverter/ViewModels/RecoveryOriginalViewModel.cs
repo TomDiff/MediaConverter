@@ -10,9 +10,9 @@ namespace MediaConverter.ViewModels
 {
     public class RecoveryOriginalViewModel
     {
-        //$checken, ob wir dies hier überhaupt noch brauchen, da für die UserControl eine DLL geladen wird$
         public RecoveryOriginalViewModel()
         { }
 
+        
     }
 }

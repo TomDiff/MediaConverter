@@ -3,7 +3,7 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MediaConverter"
+        xmlns:local="clr-namespace:MediaConverter.Views"
         xmlns:self="clr-namespace:MediaConverter.Models"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         mc:Ignorable="d"
@@ -19,11 +19,11 @@
             <TextBlock Text="Auswahl" Margin="0,0,0,10" 
                        FontSize="15" FontWeight="Normal" Foreground="#FF4F4F4F"/>
             <Border Background="#FFEEEEEE" CornerRadius="5">
-                <TreeView Name="trvNodes" ItemsSource="{Binding treeList}"
+                <TreeView Name="trvNodes" ItemsSource="{Binding TreeList}" 
                           Background="Transparent" BorderThickness="0" Margin="5,5,10,15" >
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="MouseDoubleClick">
-                        <i:InvokeCommandAction Command="{Binding ClickSelect}"/>
+                        <i:InvokeCommandAction Command="{Binding ClickSelect}" CommandParameter="{Binding Selection}"/>
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                     <TreeView.Resources>
@@ -44,7 +44,7 @@
                         <DataTemplate DataType="{x:Type self:TreeNode}">
                             <StackPanel Orientation="Horizontal" Margin="5,0,0,0">
 
-                                <TextBlock Text="{Binding Select}" 
+                                <TextBlock Text="{Binding Select}"
                                            FontSize="13" FontWeight="Normal" Foreground="#FF4F4F4F"  />
 
                             </StackPanel>
@@ -57,7 +57,7 @@
         <Border Grid.Column="1" 
                 Background="#FFEEEEEE" CornerRadius="5">  
             <!--Hier ist das ContentControl-->
-            <ContentControl Grid.Column="1"  Content="{Binding Select}"/>
+            <ContentControl Grid.Column="1"  Content="{Binding CurrentView}"/>
         </Border>
 
 

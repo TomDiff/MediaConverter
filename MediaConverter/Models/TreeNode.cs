@@ -12,6 +12,7 @@ namespace MediaConverter.Models
         //Property, die den Wert der Auswahl annimmt, um ihn an das Contentbinding zu geben
         //(zum Laden des richtigen Usercontrols)
         public string Select { get; set; }
+
         public int Case { get; set; }
 
         
