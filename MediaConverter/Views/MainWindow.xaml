@@ -10,11 +10,12 @@
         mc:Ignorable="d"
         Title="SHE | MediaCoverter" Height="600"  Width="Auto" Background="#FFE8E6E6">
 
-    <Window.Resources>
-        <DataTemplate DataType="{x:Type localViewModels:RecoveryOriginalViewModel}">
+    
+    
+    <!--DataType="{x:Type localViewModels:RecoveryOriginalViewModel}">
             <localViews:RecoveryOriginalView/>
         </DataTemplate>
-    </Window.Resources>
+    </Window.Resources>-->
 
 
     <!--<DataTemplate DataType="{x:Type localViewModels:RecoveryOriginalViewModel}">
