@@ -17,12 +17,10 @@ namespace MediaConverter
     public class MainWindowModel
     {
         #region Locals
-        string Selection { get; set; }
-        private object _recoveryOriginalViewModel;
+        string selection { get; set; }
         #endregion Locals
 
         #region Events
-
 
         #endregion Events
 
@@ -32,40 +30,38 @@ namespace MediaConverter
             //Selections the user can choose (recover, convert, check or read logfile) in a treeview
             //Auswahl, die der Nutzer wählen kann, dargestellt als Baum
 
-            treeList = new List<Tree>();
+            TreeList = new List<Tree>();
             //Treenode recover and repair   //Zweig wiederherstellen und reparieren
             Tree recover = new Tree() { Image = "/Images/wartungIcon16px.png", HeadLine = "Wiederherstellen und reparieren" };     //Headlines of the treenodes 
-            recover.Nodes.Add(new TreeNode() { Select = "Original wiederherstellen" });         //Treenodes (subselections to click)
+            recover.Nodes.Add(new TreeNode() { Select = "Original wiederherstellen"});         //Treenodes (subselections to click)
             recover.Nodes.Add(new TreeNode() { Select = "Belegseiten reparieren" });
-            treeList.Add(recover);
+            TreeList.Add(recover);
 
             //Treenode convert file         //Zweig konvertieren
             Tree convert = new Tree() { Image = "/Images/konverterIcon16px.png", HeadLine = "Konvertieren" };
             convert.Nodes.Add(new TreeNode() { Select = "mit DB-Eintrag" });
             convert.Nodes.Add(new TreeNode() { Select = "ohne DB-Eintrag" });
-            treeList.Add(convert);
+            TreeList.Add(convert);
 
             //Treenode check file           //Zweig prüfen
             Tree check = new Tree() { Image = "/Images/ablageCodeIcon16px.png", HeadLine = "Ablagecode prüfen" };
             check.Nodes.Add(new TreeNode() { Select = "für Original" });
             check.Nodes.Add(new TreeNode() { Select = "ohne Original" });
-            treeList.Add(check);
-
-            
+            TreeList.Add(check);
 
             //Treenode logfile              //Zweig Ereignisprotokoll
             Tree log = new Tree() { Image = "/Images/logData16px.png", HeadLine = "Ereignisprotokoll" };
             log.Nodes.Add(new TreeNode() { Select = "Logfile ansehen" });
-            treeList.Add(log);
+            TreeList.Add(log);
         }
 
         #endregion Constructor
 
         #region Properties
-        public RecoveryOriginalView SelectedContentControl { get; set; }
-        public List<Tree> treeList { get; set; }
+        public RecoveryOriginalView UserControl { get; set; }
+        
+        public List<Tree> TreeList { get; set; }
         public ObservableCollection<TreeNode> Nodes { get; set; }
-        public TreeNode Select { get; set; }
         
         #endregion Properties
 
@@ -76,7 +72,7 @@ namespace MediaConverter
         public ICommand ClickSelect
         {
             get
-            {
+            {          
                 return _ClickSelect ?? (_ClickSelect = new RelayCommand<object>(x => { LoadUserControl(); }));
             }
         }
@@ -87,29 +83,30 @@ namespace MediaConverter
         //Stringabgleich von "select" (Auswahl), der dann dem Content Binding sagt, welche Usercontrol geladen wird
         private void LoadUserControl()
         {
-
-            SelectedContentControl = new RecoveryOriginalView();
+            //Hier folgt der Eventteil des ChildViewModels
+            //der MainViewModelanteil kommt in RecoveryOriginalView.xaml.cs und dort wird die LoadMethode angesprochen.
+            //Keine Ahnung, ob es funktioniert, aber ein Event ist grad das einzige, was mir einfällt, um eine Methode 
+            //in einer anderen Klasse anzusprechen
             
-
-
-            //Test für Commandfunktionalität
-
-            //Selection = "Original wiederherstellen";
-            ////$Übergabe von select an Content$      
-            //switch (Selection)
-            //{
-            //    case "Original wiederherstellen":
-            //        MessageBox.Show(Selection);
-            //        break;
-            //}
-
-
-
+            //selection = TreeList[0].Nodes[0].Select.ToString();
+            UserControl = new RecoveryOriginalView();
+            
+            //MessageBox.Show(selection);
         }           
             #endregion Methods
 
-        #region Eventhandler
+            #region Eventhandler
 
             #endregion Eventhandler
+        
     }
-}
+} 
+            //RecoveryOriginalView recoveryOriginalView = new RecoveryOriginalView();
+            //Test für Commandfunktionalität           
+            //$Übergabe von select an Content$      
+            //switch (Selection)
+            //{
+            //    case "Original wiederherstellen"://CurrentView.LoadUserControl();
+                   // MessageBox.Show("");
+            //        break;
+            //}

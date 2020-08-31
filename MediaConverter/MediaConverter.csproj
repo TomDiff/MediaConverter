@@ -71,6 +71,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="Helper\Mediator.cs" />
     <Compile Include="Helper\RelayCommand.cs" />
     <Compile Include="Models\Tree.cs" />
     <Compile Include="Models\TreeNode.cs" />
