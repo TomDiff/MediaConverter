@@ -58,18 +58,8 @@ namespace MediaConverter
         #endregion Constructor
 
         #region Properties
-        public RecoveryOriginalView CurrentView
-        { 
-            get
-            {
-            return CurrentView;
-            }
-    set
-            {
-                CurrentView = value;
-            
-            }
-         }
+        public RecoveryOriginalView UserControl { get; set; }
+        
         public List<Tree> TreeList { get; set; }
         public ObservableCollection<TreeNode> Nodes { get; set; }
         
@@ -99,7 +89,7 @@ namespace MediaConverter
             //in einer anderen Klasse anzusprechen
             
             //selection = TreeList[0].Nodes[0].Select.ToString();
-            CurrentView = new RecoveryOriginalView();
+            UserControl = new RecoveryOriginalView();
             
             //MessageBox.Show(selection);
         }           

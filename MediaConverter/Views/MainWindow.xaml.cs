@@ -27,6 +27,7 @@ namespace MediaConverter
         {
             DataContext = new MainWindowModel();
             InitializeComponent();
+            
         }
     }
 }
@@ -42,6 +43,6 @@ namespace MediaConverter
 //
 //      private void button1_Click(object sender, RoutedEventArgs e)
 //      {
-//      ContainerView.Child = _recoveryWindow;
+//      
 //      }
 //   }

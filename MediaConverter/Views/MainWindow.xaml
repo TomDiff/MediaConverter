@@ -57,18 +57,10 @@
         <Border Grid.Column="1" 
                 Background="#FFEEEEEE" CornerRadius="5">  
             <!--Hier ist das ContentControl-->
-            <ContentControl Grid.Column="1"  Content="{Binding CurrentView}"/>
+            
+            <ContentControl Grid.Column="1"  Content="{Binding UserControl}"/>
         </Border>
 
-
-        
-
-
-
-
-
-        
-        
 
         <!--<Grid Background="White" HorizontalAlignment="Right" VerticalAlignment="Top"  >
             -->
@@ -83,4 +75,6 @@
         </Grid>-->
 
     </Grid>
+    
+    
 </Window>
