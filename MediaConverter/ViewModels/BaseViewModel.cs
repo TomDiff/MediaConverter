@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace MediaConverter.ViewModels
 {
-    class BaseViewModel
+    public class BaseViewModel
     {
         /// <summary>
         /// Raised when the value of a property has changed.

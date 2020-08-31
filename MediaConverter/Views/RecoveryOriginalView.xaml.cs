@@ -24,12 +24,6 @@ namespace MediaConverter.Views
         public RecoveryOriginalView()
         {
             DataContext = new RecoveryOriginalViewModel();
-
-
-            MainWindow app = new MainWindow();
-            RecoveryOriginalViewModel context = new RecoveryOriginalViewModel();
-            app.DataContext = context;
-
             InitializeComponent();
 
 

@@ -4,9 +4,9 @@
              xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
              xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
              xmlns:local="clr-namespace:MediaConverter.Views"
-             mc:Ignorable="d" d:DesignHeight="600" d:DesignWidth="1000" Background="#FFE8E6E6">
+             mc:Ignorable="d" d:DesignHeight="600" d:DesignWidth="1000" Background="red">
 
-    <Grid Name="RecoveryGrid"  
+    <!--<Grid Name="RecoveryGrid"  
           Background="blue">
                         
             <Grid.RowDefinitions>
@@ -17,13 +17,13 @@
 
         <StackPanel Name="TopGrid" Grid.Row="0" Orientation="Horizontal"
                     Background="orange"  >
-                <!--Ergänzen!!!-->
+                --><!--Ergänzen!!!--><!--
                 <TextBox Name="TextBoxSelectAnweisung" Height="20" MinWidth="900" 
                          BorderBrush="#FFDCDCDC" FontSize="11"
-                         Text="SELECT Top 10 Beleg_ID, Seiten, Ablagecode FROM Dyn_Beleg WHERE OriginalFileName is not null and Ablagecode not like '999999:\' and Erfassungsdatum >= '2018-12-14'"><!--{Binding Objekt.Property}-->
+                         Text="SELECT Top 10 Beleg_ID, Seiten, Ablagecode FROM Dyn_Beleg WHERE OriginalFileName is not null and Ablagecode not like '999999:\' and Erfassungsdatum >= '2018-12-14'">--><!--{Binding Objekt.Property}--><!--
             </TextBox>
                 
-                <!--Ergänzen!!!-->
+                --><!--Ergänzen!!!--><!--
                 <StackPanel Name="StartAbrechenPanel" Orientation="Horizontal" Height="20" Margin="2,0,0,0">
                     <Button Name="VerbindenButton" Padding="2" Command="{Binding ClickCommand}"
                             Content="Verbinden"
@@ -32,7 +32,7 @@
                             BorderThickness="0,0.5,0,0.5" 
                             BorderBrush="#31B404"/>
 
-                    <!--Ergänzen!!!-->
+                    --><!--Ergänzen!!!--><!--
                     <Button  Name="AbbrechenButton" Content="Abbrechen"  Command="{Binding ClickCommand}" 
                             Margin="10,0,0,0" 
                              Padding="5,5,5,5" 
@@ -60,7 +60,7 @@
                             BorderThickness="0,0.5,0,0.5" 
                             BorderBrush="#31B404"/>
 
-                <!--Ergänzen!!!-->
+                --><!--Ergänzen!!!--><!--
                 <Button  Name="Button1" Content="Abbrechen"  Command="{Binding ClickCommand}" 
                             Margin="10,0,0,0" 
                              Padding="5,5,5,5" 
@@ -70,7 +70,7 @@
             </StackPanel>
 
 
-        </Grid>
+        </Grid>-->
 
     
 </UserControl>

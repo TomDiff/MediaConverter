@@ -14,9 +14,9 @@ using System.Windows.Input;
 
 namespace MediaConverter
 {
-    public class MainWindowModel
+    public class MainWindowModel : BaseViewModel
     {
-       // private static INode _INode;
+     
         #region Locals
         string selection { get; set; }
         #endregion Locals
@@ -62,8 +62,16 @@ namespace MediaConverter
         #endregion Constructor
 
         #region Properties
-        public RecoveryOriginalView SelectedContentControl { get; set; }
+        private ContentControl _SelectedContentControl;
+        public ContentControl SelectedContentControl
+        {
+            get { return _SelectedContentControl; }
+            set {
+                _SelectedContentControl = value;
 
+                OnPropertyChanged(); 
+            }
+        }
         
         
         public List<Tree> TreeList { get; set; }
@@ -90,10 +98,7 @@ namespace MediaConverter
         //Stringabgleich von "select" (Auswahl), der dann dem Content Binding sagt, welche Usercontrol geladen wird
         private void LoadUserControl()
         {
-            //==$Hier folgt der Eventteil des ChildViewModels$
-          
-            //==selection = TreeList[0].Nodes[0].Select.ToString();
-            //==MessageBox.Show(selection);
+
             SelectedContentControl = new RecoveryOriginalView();
         }           
             #endregion Methods
