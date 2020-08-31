@@ -11,6 +11,9 @@ namespace MediaConverter.Models
         //Property to save the value of the selection for the content binding of usercontrol in MainWindowModel
         //Property, die den Wert der Auswahl annimmt, um ihn an das Contentbinding zu geben
         //(zum Laden des richtigen Usercontrols)
-        public String Select { get; set; }
+        public string Select { get; set; }
+        public int Case { get; set; }
+
+        
     }
 }

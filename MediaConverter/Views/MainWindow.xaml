@@ -21,16 +21,13 @@
             <Border Background="#FFEEEEEE" CornerRadius="5">
                 <TreeView Name="trvNodes" ItemsSource="{Binding treeList}"
                           Background="Transparent" BorderThickness="0" Margin="5,5,10,15" >
-
                     <i:Interaction.Triggers>
-                        <i:EventTrigger EventName="TreeViewMouseClick">
-                            <i:InvokeCommandAction Command="{Binding ClickCommand}"/>
+                        <i:EventTrigger EventName="MouseDoubleClick">
+                        <i:InvokeCommandAction Command="{Binding ClickSelect}"/>
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
-
                     <TreeView.Resources>
                         <HierarchicalDataTemplate DataType="{x:Type self:Tree}" ItemsSource="{Binding Nodes}">
-
                             <StackPanel Orientation="Horizontal" Margin="0,10,0,10">
                                 <Image x:Name="TreeIcon" Source="{Binding Image}"/>
                                 
@@ -61,8 +58,7 @@
         <Border Grid.Column="1" 
                 Background="#FFEEEEEE" CornerRadius="5">
             <!--Hier ist das ContentControl-->
-            <ContentControl Grid.Column="1"  Content="{Binding RecoveryOriginalView}"/>
-
+            <ContentControl Grid.Column="1"  Content="{Binding Select}"/>
         </Border>
 
 

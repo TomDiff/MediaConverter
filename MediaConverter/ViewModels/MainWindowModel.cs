@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
+using System.Windows.Controls;
 using System.Windows.Input;
 
 namespace MediaConverter
@@ -16,7 +17,7 @@ namespace MediaConverter
     public class MainWindowModel
     {
         #region Locals
-
+        string Selection { get; set; }
         #endregion Locals
 
         #region Events
@@ -53,17 +54,15 @@ namespace MediaConverter
             Tree log = new Tree() { Image = "/Images/logData16px.png", HeadLine = "Ereignisprotokoll" };
             log.Nodes.Add(new TreeNode() { Select = "Logfile ansehen" });
             treeList.Add(log);
-
-
         }
 
         #endregion Constructor
 
         #region Properties
         public RecoveryOriginalView _currentView { get; set; }
-
         public List<Tree> treeList { get; set; }
         public ObservableCollection<TreeNode> Nodes { get; set; }
+        public TreeNode Select { get; set; }
         #endregion Properties
 
         #region Commands
@@ -74,7 +73,7 @@ namespace MediaConverter
         {
             get
             {
-                return _ClickSelect ?? (_ClickSelect = new RelayCommand<object>(x => { LoadUserControl(); })); //parameter fehlt noch
+                return _ClickSelect ?? (_ClickSelect = new RelayCommand<object>(x => { LoadUserControl(); }));
             }
         }
         #endregion Commands
@@ -84,15 +83,22 @@ namespace MediaConverter
         //Stringabgleich von "select" (Auswahl), der dann dem Content Binding sagt, welche Usercontrol geladen wird
         private void LoadUserControl()
         {
+            //Test für Commandfunktionalität
 
+            Selection = "Original wiederherstellen";
             //$Übergabe von select an Content$      
-            MessageBox.Show("Hello");
+            switch (Selection)
+            {
+                case "Original wiederherstellen":
+                    MessageBox.Show(Selection);
+                    break;
+            }
+        }           
+            #endregion Methods
 
-        }
-        #endregion Methods
+            #region Eventhandler
 
-        #region Eventhandler
-
-        #endregion Eventhandler
+            #endregion Eventhandler
+        
     }
 }
