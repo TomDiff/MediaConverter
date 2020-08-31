@@ -23,8 +23,16 @@ namespace MediaConverter.Views
     {
         public RecoveryOriginalView()
         {
-            this.DataContext = new RecoveryOriginalViewModel();
-         //   InitializeComponent();
+            DataContext = new RecoveryOriginalViewModel();
+
+
+            MainWindow app = new MainWindow();
+            RecoveryOriginalViewModel context = new RecoveryOriginalViewModel();
+            app.DataContext = context;
+
+            InitializeComponent();
+
+
         }
     }
 }

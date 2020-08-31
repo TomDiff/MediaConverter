@@ -16,6 +16,7 @@ namespace MediaConverter
 {
     public class MainWindowModel
     {
+       // private static INode _INode;
         #region Locals
         string selection { get; set; }
         #endregion Locals
@@ -61,7 +62,9 @@ namespace MediaConverter
         #endregion Constructor
 
         #region Properties
-        public RecoveryOriginalView UserControl { get; set; }
+        public RecoveryOriginalView SelectedContentControl { get; set; }
+
+        
         
         public List<Tree> TreeList { get; set; }
         public ObservableCollection<TreeNode> Nodes { get; set; }
@@ -87,15 +90,11 @@ namespace MediaConverter
         //Stringabgleich von "select" (Auswahl), der dann dem Content Binding sagt, welche Usercontrol geladen wird
         private void LoadUserControl()
         {
-            //Hier folgt der Eventteil des ChildViewModels
-            //der MainViewModelanteil kommt in RecoveryOriginalView.xaml.cs und dort wird die LoadMethode angesprochen.
-            //Keine Ahnung, ob es funktioniert, aber ein Event ist grad das einzige, was mir einfällt, um eine Methode 
-            //in einer anderen Klasse anzusprechen
-            
-            //selection = TreeList[0].Nodes[0].Select.ToString();
-            UserControl = new RecoveryOriginalView();
-            
-            //MessageBox.Show(selection);
+            //==$Hier folgt der Eventteil des ChildViewModels$
+          
+            //==selection = TreeList[0].Nodes[0].Select.ToString();
+            //==MessageBox.Show(selection);
+            SelectedContentControl = new RecoveryOriginalView();
         }           
             #endregion Methods
 
