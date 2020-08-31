@@ -11,7 +11,9 @@ namespace MediaConverter.ViewModels
     public class RecoveryOriginalViewModel
     {
         public RecoveryOriginalViewModel()
-        { }
+        {
+           
+        }
 
         
     }

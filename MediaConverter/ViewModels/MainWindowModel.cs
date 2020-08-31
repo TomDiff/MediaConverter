@@ -22,6 +22,7 @@ namespace MediaConverter
 
         #region Events
 
+
         #endregion Events
 
         #region Constructor
@@ -49,6 +50,8 @@ namespace MediaConverter
             check.Nodes.Add(new TreeNode() { Select = "ohne Original" });
             TreeList.Add(check);
 
+            
+
             //Treenode logfile              //Zweig Ereignisprotokoll
             Tree log = new Tree() { Image = "/Images/logData16px.png", HeadLine = "Ereignisprotokoll" };
             log.Nodes.Add(new TreeNode() { Select = "Logfile ansehen" });
@@ -62,6 +65,7 @@ namespace MediaConverter
         
         public List<Tree> TreeList { get; set; }
         public ObservableCollection<TreeNode> Nodes { get; set; }
+        public TreeNode Select { get; set; }
         
         #endregion Properties
 
@@ -95,10 +99,9 @@ namespace MediaConverter
         }           
             #endregion Methods
 
-            #region Eventhandler
+        #region Eventhandler
 
             #endregion Eventhandler
-        
     }
 } 
             //RecoveryOriginalView recoveryOriginalView = new RecoveryOriginalView();

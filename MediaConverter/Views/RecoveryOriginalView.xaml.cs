@@ -23,15 +23,8 @@ namespace MediaConverter.Views
     {
         public RecoveryOriginalView()
         {
-          LoadUserControl();          
-          this.DataContext = new RecoveryOriginalViewModel();            
-          InitializeComponent();
-        }
-
-        public void LoadUserControl()
-        {
-              
-           
+            this.DataContext = new RecoveryOriginalViewModel();
+         //   InitializeComponent();
         }
     }
 }
