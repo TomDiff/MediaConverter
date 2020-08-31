@@ -3,11 +3,25 @@
         xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
         xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
         xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-        xmlns:local="clr-namespace:MediaConverter"
-        xmlns:self="clr-namespace:MediaConverter.Models"
+        xmlns:localViewModels="clr-namespace:MediaConverter.ViewModels"
+        xmlns:localViews="clr-namespace:MediaConverter.Views"
+        xmlns:localModels="clr-namespace:MediaConverter.Models"
         xmlns:i="http://schemas.microsoft.com/expression/2010/interactivity"
         mc:Ignorable="d"
         Title="SHE | MediaCoverter" Height="600"  Width="Auto" Background="#FFE8E6E6">
+
+    <Window.Resources>
+        <DataTemplate DataType="{x:Type localViewModels:RecoveryOriginalViewModel}">
+            <localViews:RecoveryOriginalView/>
+        </DataTemplate>
+    </Window.Resources>
+
+
+    <!--<DataTemplate DataType="{x:Type localViewModels:RecoveryOriginalViewModel}">
+        <localViews:RecoveryOriginalView />
+    </DataTemplate>-->
+
+
 
     <Grid Name="MainGrid" Margin="10">
         <Grid.ColumnDefinitions>
@@ -23,14 +37,14 @@
                           Background="Transparent" BorderThickness="0" Margin="5,5,10,15" >
                     <i:Interaction.Triggers>
                         <i:EventTrigger EventName="MouseDoubleClick">
-                        <i:InvokeCommandAction Command="{Binding ClickSelect}"/>
+                            <i:InvokeCommandAction Command="{Binding ClickSelect}"/>
                         </i:EventTrigger>
                     </i:Interaction.Triggers>
                     <TreeView.Resources>
-                        <HierarchicalDataTemplate DataType="{x:Type self:Tree}" ItemsSource="{Binding Nodes}">
+                        <HierarchicalDataTemplate DataType="{x:Type localModels:Tree}" ItemsSource="{Binding Nodes}">
                             <StackPanel Orientation="Horizontal" Margin="0,10,0,10">
                                 <Image x:Name="TreeIcon" Source="{Binding Image}"/>
-                                
+
                                 <TextBlock Text="{Binding HeadLine}" Cursor="Hand" 
                                            Padding="10,0,0,0" FontSize="15" FontWeight="Normal" Foreground="#FF0060CF"/>
                                 <TextBlock Text=" (" 
@@ -42,7 +56,7 @@
                             </StackPanel>
 
                         </HierarchicalDataTemplate>
-                        <DataTemplate DataType="{x:Type self:TreeNode}">
+                        <DataTemplate DataType="{x:Type localModels:TreeNode}">
                             <StackPanel Orientation="Horizontal" Margin="5,0,0,0">
 
                                 <TextBlock Text="{Binding Select}" 
@@ -55,31 +69,23 @@
 
             </Border>
         </StackPanel>
+
+
         <Border Grid.Column="1" 
                 Background="#FFEEEEEE" CornerRadius="5">
             <!--Hier ist das ContentControl-->
-            <ContentControl Grid.Column="1"  Content="{Binding Select}"/>
+            <ContentControl  Grid.Column="1" Margin="10"   Content="{Binding SelectedContentControl}"/>
         </Border>
 
-
-
-
-
-
-
-
-
-
-
         <!--<Grid Background="White" HorizontalAlignment="Right" VerticalAlignment="Top"  >
-            -->
-        <!-- overlay with hint text -->
-        <!--
+            
+         overlay with hint text 
+        
             <TextBlock Margin="5,2" MinWidth="50" Text="Suche..." 
                    Foreground="LightSteelBlue" Visibility="{Binding ElementName=txtSearchBox, Path=Text.IsEmpty, Converter={StaticResource MyBoolToVisibilityConverter}}" />
-            -->
-        <!-- enter term here -->
-        <!--
+            
+         enter term here 
+        
             <TextBox MinWidth="50" Name="txtSearchBox" Background="Transparent" />
         </Grid>-->
 

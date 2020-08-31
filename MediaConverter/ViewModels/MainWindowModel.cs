@@ -18,6 +18,7 @@ namespace MediaConverter
     {
         #region Locals
         string Selection { get; set; }
+        private object _recoveryOriginalViewModel;
         #endregion Locals
 
         #region Events
@@ -50,6 +51,8 @@ namespace MediaConverter
             check.Nodes.Add(new TreeNode() { Select = "ohne Original" });
             treeList.Add(check);
 
+            
+
             //Treenode logfile              //Zweig Ereignisprotokoll
             Tree log = new Tree() { Image = "/Images/logData16px.png", HeadLine = "Ereignisprotokoll" };
             log.Nodes.Add(new TreeNode() { Select = "Logfile ansehen" });
@@ -59,10 +62,11 @@ namespace MediaConverter
         #endregion Constructor
 
         #region Properties
-        public RecoveryOriginalView _currentView { get; set; }
+        public RecoveryOriginalView SelectedContentControl { get; set; }
         public List<Tree> treeList { get; set; }
         public ObservableCollection<TreeNode> Nodes { get; set; }
         public TreeNode Select { get; set; }
+        
         #endregion Properties
 
         #region Commands
@@ -83,22 +87,29 @@ namespace MediaConverter
         //Stringabgleich von "select" (Auswahl), der dann dem Content Binding sagt, welche Usercontrol geladen wird
         private void LoadUserControl()
         {
+
+            SelectedContentControl = new RecoveryOriginalView();
+            
+
+
             //Test für Commandfunktionalität
 
-            Selection = "Original wiederherstellen";
-            //$Übergabe von select an Content$      
-            switch (Selection)
-            {
-                case "Original wiederherstellen":
-                    MessageBox.Show(Selection);
-                    break;
-            }
+            //Selection = "Original wiederherstellen";
+            ////$Übergabe von select an Content$      
+            //switch (Selection)
+            //{
+            //    case "Original wiederherstellen":
+            //        MessageBox.Show(Selection);
+            //        break;
+            //}
+
+
+
         }           
             #endregion Methods
 
-            #region Eventhandler
+        #region Eventhandler
 
             #endregion Eventhandler
-        
     }
 }

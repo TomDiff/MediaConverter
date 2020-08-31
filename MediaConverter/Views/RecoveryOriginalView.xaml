@@ -41,8 +41,8 @@
                              BorderBrush="#FF0000"/>
                 </StackPanel>
             </StackPanel>
-            
-            <DataGrid Name="DataGridRecovery" Grid.Row="1" ItemsSource="{Binding Objekt}">
+
+        <DataGrid Name="DataGridRecovery" Grid.Row="1" ItemsSource="{Binding Objekt}" Background="Red">
                 <DataGrid.Columns>
                     <DataGridTextColumn  Header="Beleg_ID" Width="*" Binding="{Binding Beleg_ID}"/>
                     <DataGridTextColumn  Header="Seiten" Width="*" Binding="{Binding Seiten}"/>
