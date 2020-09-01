@@ -49,9 +49,7 @@ namespace MediaConverter
             Tree check = new Tree() { Image = "/Images/ablageCodeIcon16px.png", HeadLine = "Ablagecode prüfen" };
             check.Nodes.Add(new TreeNode() { Select = "für Original" });
             check.Nodes.Add(new TreeNode() { Select = "ohne Original" });
-            TreeList.Add(check);
-
-            
+            TreeList.Add(check);           
 
             //Treenode logfile              //Zweig Ereignisprotokoll
             Tree log = new Tree() { Image = "/Images/logData16px.png", HeadLine = "Ereignisprotokoll" };
@@ -65,19 +63,16 @@ namespace MediaConverter
         private ContentControl _SelectedContentControl;
         public ContentControl SelectedContentControl
         {
-            get { return _SelectedContentControl; }
-            set {
+            get => _SelectedContentControl;
+            set
+            {
                 _SelectedContentControl = value;
-
-                OnPropertyChanged(); 
+                OnPropertyChanged();
             }
         }
-        
-        
-        public List<Tree> TreeList { get; set; }
-        public ObservableCollection<TreeNode> Nodes { get; set; }
-        public TreeNode Select { get; set; }
-        
+
+        public RecoveryOriginalView RecoveryOriginalView { get; set; }
+        public List<Tree> TreeList { get; set; }        
         #endregion Properties
 
         #region Commands
@@ -88,7 +83,7 @@ namespace MediaConverter
         {
             get
             {          
-                return _ClickSelect ?? (_ClickSelect = new RelayCommand<object>(x => { LoadUserControl(); }));
+                return _ClickSelect ?? (_ClickSelect = new RelayCommand<object>(x => { LoadUserControl(); })); // LoadUserControl(null);
             }
         }
         #endregion Commands
@@ -96,10 +91,11 @@ namespace MediaConverter
         #region Methods
         //Stringcompare of "select" to load the needed usercontrol
         //Stringabgleich von "select" (Auswahl), der dann dem Content Binding sagt, welche Usercontrol geladen wird
-        private void LoadUserControl()
+        private void LoadUserControl()  // (object parameter)
         {
-
-            SelectedContentControl = new RecoveryOriginalView();
+            if (RecoveryOriginalView == null)
+                RecoveryOriginalView = new RecoveryOriginalView();
+            SelectedContentControl = RecoveryOriginalView;
         }           
             #endregion Methods
 
