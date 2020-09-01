@@ -1,29 +1,33 @@
 ﻿using System;
-using System.Collections.Generic;
 using System.ComponentModel;
-using System.Linq;
+using System.Linq.Expressions;
 using System.Runtime.CompilerServices;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace MediaConverter.ViewModels
 {
-    public class BaseViewModel
+    public class BaseViewModel : INotifyPropertyChanged
     {
-        /// <summary>
-        /// Raised when the value of a property has changed.
-        /// </summary>
-        public new event PropertyChangedEventHandler PropertyChanged;
+        public event PropertyChangedEventHandler PropertyChanged;
 
-
-
-        /// <summary>
-        /// Raises <see cref="PropertyChanged"/> for the property whose name matches <see cref="propertyName"/>.
-        /// </summary>
-        /// <param name="propertyName">Optional. The name of the property whose value has changed.</param>
         protected void OnPropertyChanged([CallerMemberName] string propertyName = "")
         {
-            PropertyChanged?.Invoke(this, new PropertyChangedEventArgs(propertyName));
+            OnPropertyChangedExplicit(propertyName);
+        }
+
+        protected void OnPropertyChanged<TProperty>(Expression<Func<TProperty>> projection)
+        {
+            var memberExpression = (MemberExpression)projection.Body;
+            OnPropertyChangedExplicit(memberExpression.Member.Name);
+        }
+
+        void OnPropertyChangedExplicit(string propertyName)
+        {
+            PropertyChangedEventHandler handler = this.PropertyChanged;
+            if (handler != null)
+            {
+                var e = new PropertyChangedEventArgs(propertyName);
+                handler(this, e);
+            }
         }
     }
 }

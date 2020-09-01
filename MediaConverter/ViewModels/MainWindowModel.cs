@@ -16,9 +16,10 @@ namespace MediaConverter
 {
     public class MainWindowModel : BaseViewModel
     {
-     
+
         #region Locals
-        string selection { get; set; }
+        private string selection { get; set; }
+        public RecoveryOriginalView RecoveryOriginalView { get; set; }
         #endregion Locals
 
         #region Events
@@ -35,7 +36,7 @@ namespace MediaConverter
             TreeList = new List<Tree>();
             //Treenode recover and repair   //Zweig wiederherstellen und reparieren
             Tree recover = new Tree() { Image = "/Images/wartungIcon16px.png", HeadLine = "Wiederherstellen und reparieren" };     //Headlines of the treenodes 
-            recover.Nodes.Add(new TreeNode() { Select = "Original wiederherstellen"});         //Treenodes (subselections to click)
+            recover.Nodes.Add(new TreeNode() { Select = "Original wiederherstellen" });         //Treenodes (subselections to click)
             recover.Nodes.Add(new TreeNode() { Select = "Belegseiten reparieren" });
             TreeList.Add(recover);
 
@@ -49,7 +50,9 @@ namespace MediaConverter
             Tree check = new Tree() { Image = "/Images/ablageCodeIcon16px.png", HeadLine = "Ablagecode prüfen" };
             check.Nodes.Add(new TreeNode() { Select = "für Original" });
             check.Nodes.Add(new TreeNode() { Select = "ohne Original" });
-            TreeList.Add(check);           
+            TreeList.Add(check);
+
+
 
             //Treenode logfile              //Zweig Ereignisprotokoll
             Tree log = new Tree() { Image = "/Images/logData16px.png", HeadLine = "Ereignisprotokoll" };
@@ -67,12 +70,16 @@ namespace MediaConverter
             set
             {
                 _SelectedContentControl = value;
+
                 OnPropertyChanged();
             }
         }
 
-        public RecoveryOriginalView RecoveryOriginalView { get; set; }
-        public List<Tree> TreeList { get; set; }        
+
+        public List<Tree> TreeList { get; set; }
+        public ObservableCollection<TreeNode> Nodes { get; set; }
+        public TreeNode Select { get; set; }
+
         #endregion Properties
 
         #region Commands
@@ -82,8 +89,8 @@ namespace MediaConverter
         public ICommand ClickSelect
         {
             get
-            {          
-                return _ClickSelect ?? (_ClickSelect = new RelayCommand<object>(x => { LoadUserControl(); })); // LoadUserControl(null);
+            {
+                return _ClickSelect ?? (_ClickSelect = new RelayCommand<object>(x => { LoadUserControl(null); }));
             }
         }
         #endregion Commands
@@ -91,25 +98,25 @@ namespace MediaConverter
         #region Methods
         //Stringcompare of "select" to load the needed usercontrol
         //Stringabgleich von "select" (Auswahl), der dann dem Content Binding sagt, welche Usercontrol geladen wird
-        private void LoadUserControl()  // (object parameter)
+        private void LoadUserControl(object parameter)
         {
             if (RecoveryOriginalView == null)
                 RecoveryOriginalView = new RecoveryOriginalView();
             SelectedContentControl = RecoveryOriginalView;
-        }           
-            #endregion Methods
+        }
+        #endregion Methods
 
         #region Eventhandler
 
-            #endregion Eventhandler
+        #endregion Eventhandler
     }
-} 
-            //RecoveryOriginalView recoveryOriginalView = new RecoveryOriginalView();
-            //Test für Commandfunktionalität           
-            //$Übergabe von select an Content$      
-            //switch (Selection)
-            //{
-            //    case "Original wiederherstellen"://CurrentView.LoadUserControl();
-                   // MessageBox.Show("");
-            //        break;
-            //}
+}
+//RecoveryOriginalView recoveryOriginalView = new RecoveryOriginalView();
+//Test für Commandfunktionalität           
+//$Übergabe von select an Content$      
+//switch (Selection)
+//{
+//    case "Original wiederherstellen"://CurrentView.LoadUserControl();
+// MessageBox.Show("");
+//        break;
+//}
